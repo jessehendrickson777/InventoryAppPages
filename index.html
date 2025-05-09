@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Inventory Count Form</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img
+          src="Central Southern Indiana Logo.png"
+          alt="Logo"
+          class="navbar-logo"
+        />
+      </div>
+      <div class="navbar-right">
+        <div class="dropdown">
+          <div class="dropdown-bar">
+            <i class="fa-solid fa-user user-icon"></i>
+            <label for="user">Jesse Hendrickson</label>
+            <button class="dropdown-button">▼</button>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="#logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main-layout">
+      <!-- Side Navbar -->
+      <div class="side-navbar">
+        <ul>
+          <li>
+            <i class="fa-solid fa-table"></i>
+            <a href="#section1">Daily Closeout</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-truck"></i
+            ><a href="#trailerInventory">Trailer Inventory</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-warehouse"></i
+            ><a href="#backroomInventory">Backroom Inventory</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Form -->
+      <div id="trailerInventory" class="form-container form-container-1 view">
+        <div class="form-content">
+          <form>
+          <div class="header-container">
+            <i class="fa-solid fa-truck"></i>
+            <h1>Trailer Inventory</h1>
+          </div>
+          <div class="form-groups-container">
+            <!-- Group 0 -->
+            <div class="left-form-group">
+              <div class="form-group form-group-0">
+                <h2>Trailer Details</h2>
+                <label for="trailerNumber">Trailer Number</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="trailerNumber"
+                    name="trailerNumber"
+                    placeholder="Enter trailer number"
+                  />
+                </div>
+                <label for="date">Date of Departure</label>
+                <div class="input-group input-group-details">
+                  <input type="date" id="date" name="date" />
+                </div>
+              </div>
+
+              <!-- Group 1 -->
+              <div class="form-group form-group-1">
+                <h2>Inventory</h2>
+                <label for="unprocessedWares">Unprocessed Wares</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="unprocessedWares"
+                    name="unprocessedWares"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+
+                <label for="reprocessedWares">Reprocessed Wares</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="reprocessedWares"
+                    name="reprocessedWares"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+
+                <label for="unprocessedTextiles">Unprocessed Textiles</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="unprocessedTextiles"
+                    name="unprocessedTextiles"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+
+                <label for="unprocessedBooks">Unprocessed Books</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="unprocessedBooks"
+                    name="unprocessedBooks"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+
+                <label for="unprocessedShoes">Unprocessed Shoes</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="unprocessedShoes"
+                    name="unprocessedShoes"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+
+                <label for="shopGoodwillSkid">ShopGoodwill Skid</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="shopGoodwillSkid"
+                    name="shopGoodwillSkid"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group 2 -->
+            <div class="form-group form-group-2">
+              <h2>Salvage</h2>
+              <label for="salvageWares">Salvage Wares</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageWares"
+                  name="salvageWares"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageTextiles">Salvage Textiles</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageTextiles"
+                  name="salvageTextiles"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageBooks">Salvage Books</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageBooks"
+                  name="salvageBooks"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageShoes">Salvage Shoes</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageShoes"
+                  name="salvageShoes"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="heavySalvage">Heavy Salvage</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="heavySalvage"
+                  name="heavySalvage"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageGlass">Salvage Glass</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageGlass"
+                  name="salvageGlass"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="furniture">Furniture</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="furniture"
+                  name="furniture"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="cardboard">Cardboard</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="cardboard"
+                  name="cardboard"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="trash">Trash</label>
+              <div class="input-group">
+                <input type="number" id="trash" name="trash" value="0" />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="form-group form-group-3">
+              <h2>Supplies</h2>
+              <label for="plasticSkids">Plastic Skids</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="plasticSkids"
+                  name="plasticSkids"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="plasticSkidSleeves">Plastic Skid Sleeves</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="plasticSkidSleeves"
+                  name="plasticSkidSleeves"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="woodenSkids">Wooden Skids</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="woodenSkids"
+                  name="woodenSkids"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="woodenSkidSleeves">Wooden Skid Sleeves</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="woodenSkidSleeves"
+                  name="woodenSkidSleeves"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="totes">Totes</label>
+              <div class="input-group">
+                <input type="number" id="totes" name="totes" value="0" />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+            </div>
+          </div>
+          <div class="submit-section">
+            <button class="submit" type="button">Submit Counts</button>
+          </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Backroom Inventory Form -->
+
+        <div
+          id="backroomInventory"
+          class="form-container form-container-2 view hidden"
+        >
+        <div class="form-content">
+        <form>
+          <div class="header-container">
+            <i class="fa-solid fa-warehouse"></i>
+            <h1>Backroom Inventory</h1>
+          </div>
+          <div class="form-groups-container">
+            <!-- Group 0 -->
+            <div class="left-form-group">
+              <div class="form-group form-group-0">
+                <h2>Store Details</h2>
+                <label for="storeNumber">Store Number</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="storeNumber"
+                    name="storeNumber"
+                    placeholder="Enter store number"
+                  />
+                </div>
+                <label for="date">Date of Departure</label>
+                <div class="input-group input-group-details">
+                  <input type="date" id="date" name="date" />
+                </div>
+              </div>
+
+              <!-- Group 1 -->
+              <div class="form-group form-group-1">
+                <h2>Supplies</h2>
+                <label for="plasticSkids">Plastic Skids</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="plasticSkids"
+                    name="plasticSkids"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+  
+                <label for="plasticSkidSleeves">Plastic Skid Sleeves</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="plasticSkidSleeves"
+                    name="plasticSkidSleeves"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+  
+                <label for="woodenSkids">Wooden Skids</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="woodenSkids"
+                    name="woodenSkids"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+  
+                <label for="woodenSkidSleeves">Wooden Skid Sleeves</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="woodenSkidSleeves"
+                    name="woodenSkidSleeves"
+                    value="0"
+                  />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+  
+                <label for="totes">Totes</label>
+                <div class="input-group">
+                  <input type="number" id="totes" name="totes" value="0" />
+                  <button type="button" class="plus-button">+</button>
+                  <button type="button" class="minus-button">-</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Group 2 -->
+            <div class="form-group form-group-2">
+              <h2>Inventory</h2>
+              <label for="unprocessedWares">Unprocessed Wares</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="unprocessedWares"
+                  name="unprocessedWares"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="reprocessedWares">Reprocessed Wares</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="reprocessedWares"
+                  name="reprocessedWares"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="unprocessedTextiles">Unprocessed Textiles</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="unprocessedTextiles"
+                  name="unprocessedTextiles"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="unprocessedBooks">Unprocessed Books</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="unprocessedBooks"
+                  name="unprocessedBooks"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="unprocessedShoes">Unprocessed Shoes</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="unprocessedShoes"
+                  name="unprocessedShoes"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="furniture">Furniture</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="furniture"
+                  name="furniture"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="shopGoodwillSkid">ShopGoodwill Skid</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="shopGoodwillSkid"
+                  name="shopGoodwillSkid"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="form-group form-group-3">
+
+              <h2>Salvage</h2>
+              <label for="salvageWares">Salvage Wares</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageWares"
+                  name="salvageWares"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageTextiles">Salvage Textiles</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageTextiles"
+                  name="salvageTextiles"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageBooks">Salvage Books</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageBooks"
+                  name="salvageBooks"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageShoes">Salvage Shoes</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageShoes"
+                  name="salvageShoes"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="heavySalvage">Heavy Salvage</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="heavySalvage"
+                  name="heavySalvage"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="salvageGlass">Salvage Glass</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="salvageGlass"
+                  name="salvageGlass"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="cardboard">Cardboard</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  id="cardboard"
+                  name="cardboard"
+                  value="0"
+                />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+
+              <label for="trash">Trash</label>
+              <div class="input-group">
+                <input type="number" id="trash" name="trash" value="0" />
+                <button type="button" class="plus-button">+</button>
+                <button type="button" class="minus-button">-</button>
+              </div>
+         
+            </div>
+          </div>
+          <div class="submit-section">
+            <button class="submit" type="button">Submit Counts</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    </div>
+
+    <div class="custom-Modal">
+      <div id="customConfirm1" style="display: none" class="confirmModal">
+        <div class="confirmBox zero-value-warning">
+          <p>
+            Forms can not be submitted with 0 values. Please make sure all fields are
+            filled out before submitting the trailer inventory.
+          </p>
+          <button id="confirmYes1">Okay</button>
+        </div>
+      </div>
+
+      <div id="customConfirm2" style="display: none" class="confirmModal">
+        <div class="confirmBox">
+          <p>Are you sure you want to submit trailer inventory?</p>
+          <button id="confirmYes2">Yes, Submit</button>
+          <button id="confirmNo2">Cancel</button>
+        </div>
+      </div>
+
+      <div id="missedQuestion" style="display: none" class="confirmModal">
+        <div class="missedQ">
+          <p>
+            Please make sure all fields are filled out before submitting the
+            trailer inventory.
+          </p>
+          <button id="missed">Okay</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

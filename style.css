@@ -1,0 +1,572 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(to bottom, #eaeaea, #ffffff); */
+  /* background-image: url("pictures/TrailerInventoryBackground3.jpg"); */
+  /* background-size: 80vw; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* allow resizing */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+input[type="number"] {
+  font-size: clamp(12px, 1.5vw, 16px);
+  -moz-appearance: textfield; /* For Firefox */
+  -webkit-appearance: none; /* For Chrome, Safari, and Edge */
+  appearance: none; /* Standard property */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Remove spinners in WebKit browsers */
+  margin: 0; /* Remove any margin */
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* h1 {
+  color: black;
+  text-align: center;
+} */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  justify-content: center;
+  margin: 0 0 1vh 0;
+}
+
+.header-container i {
+  font-size: 24px;
+  color: black;
+}
+
+/* .form-container h1 {
+  width: 100%;
+  text-align: left;
+  margin: 0 0 10px 0;
+  font-size: 3vh;
+  line-height: 1;
+  color: black;
+} */
+
+.header-container h1 {
+  width: 100%;
+  text-align: left;
+  font-size: 3vh;
+  line-height: 1;
+  color: black;
+}
+
+#backroomInventory {
+  background-image: url("goodwillbackroom.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+#trailerInventory {
+  background-image: url("goodwillTrailer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.form-content {
+  position: absolute; /* Position relative to the parent container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Semi-transparent white overlay */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack content vertically */
+  padding: 20px;
+  z-index: 2; /* Ensure it appears above the background image */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Form Container */
+.form-container {
+  flex: 1; /* Take up the remaining space */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* Space between form groups */
+  align-items: stretch; /* Align items to the top */
+  padding: 40px; /* Add padding around the content */
+  margin-left: 220px;
+  height: auto;
+  gap: 0.5vw; /* Space between form groups */
+  margin-top: 4.5vh;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  /* background: linear-gradient(to bottom, #eaeaea, #ffffff); */
+}
+
+.form-groups-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow form groups to wrap */
+  justify-content: space-between; /* Space between form groups */
+  align-items: flex-start; /* Align items to the top */
+  gap: 1vw; /* Add spacing between form groups */
+}
+
+/* Form Groups */
+.form-group {
+  flex: 1 1 calc(50% - 20px); /* Allow items to grow and shrink, with a base width of 33% minus the gap */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1vw;
+  background-color: rgba(249, 249, 249, 0.8); /* Light gray with transparency */
+
+  overflow-y: auto;
+}
+
+.left-form-group {
+  flex: 1 1 30%; /* Trailer Details and Inventory span the full width */
+  display: flex;
+  flex-direction: column; /* Stack Trailer Details and Inventory vertically */
+  gap: 1vh; /* Add spacing between the two groups */
+}
+
+.form-group-2,
+.form-group-3 {
+  flex: 1 1 33%; /* Supplies group spans the full width */
+}
+
+.form-group h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: clamp(16px, 2vw, 20px); /* Responsive font size */
+}
+
+.form-group label {
+  font-size: clamp(12px, 1.5vw, 16px);
+  display: block;
+  margin-top: 0.5vh;
+  font-weight: bold;
+  color: black;
+}
+
+.form-group input[type="number"] {
+  padding: 0.5vh;
+  margin-top: 0.5vh;
+}
+
+.form-group-0 #storeNumber {
+  height: 4vh; /* Match the height of other inputs */
+  width: 12vw; /* Make the input span the full width of the container */
+  border: 2px solid black; /* Add a full border around the input */
+  border-radius: 10px; /* Add rounded corners to all sides */
+  outline: none; /* Remove the default outline */
+  padding: 0.5vw; /* Add padding inside the input */
+}
+
+/* Target inputs in form-group-0 */
+.form-group-0 input[type="text"] {
+  height: 4vh; /* Match the height of other inputs */
+  width: 100%; /* Make the input span the full width of the container */
+  border: 2px solid black; /* Add a full border around the input */
+  border-radius: 10px; /* Add rounded corners to all sides */
+  outline: none; /* Remove the default outline */
+  padding: 0.5vw; /* Add padding inside the input */
+}
+
+.form-group-0 input[type="date"] {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  height: 4vh; /* Match the height of other inputs */
+  width: 100%; /* Make the input span the full width of the container */
+  border: 2px solid black; /* Add a full border around the input */
+  border-radius: 10px; /* Add rounded corners to all sides */
+  outline: none; /* Remove the default outline */
+  padding: 0.5vw; /* Add padding inside the input */
+}
+
+.input-group {
+  display: flex;
+  align-items: stretch; /* Ensures vertical alignment */
+  margin-bottom: 0.6vh;
+}
+
+.input-group input,
+.input-group button {
+  font-size: 1vw; /* Ensure font size is the same */
+  line-height: 1; /* Prevent extra spacing caused by line height */
+  padding: 0; /* Adjust padding to match the height */
+}
+
+.input-group input {
+  height: 4vh;
+  width: 7vw;
+  border: 2px solid black;
+  border-right: none; /* Remove the right border to connect with the button */
+  border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+  outline: none;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.input-group input:hover {
+  background-color: #f1f1f1;
+}
+
+.input-group button {
+  height: 4vh;
+  background: linear-gradient(to right, #49a4ff, #0080ff);
+  color: white;
+  border: 2px solid black;
+  border-left: none; /* Remove the left border to connect with the input */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5vw; /* Adjust padding to match the height */
+
+  position: relative; /* Position relative for absolute positioning of icon */
+  top: 0.5vh; /* Adjust position to align with input */
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+  transition: background 0.3s ease;
+}
+
+.input-group button:hover {
+  background: linear-gradient(
+    to right,
+    #bdddff,
+    #89cfff
+  ); /* Adjust gradient for hover effect */
+  color: black; /* Optional: Change text color on hover */
+}
+
+.plus-button {
+  border-radius: 0 !important; /* Remove rounded corners */
+  border-left: 3px solid black !important; /* Add left border */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.submit-section {
+  bottom: 1vh;
+  right: 1vw;
+  text-align: right;
+  position: absolute;
+}
+
+.submit-section button {
+  background: linear-gradient(to bottom, #49a4ff, #004d99);
+  color: white;
+  font-size: 2vh;
+  font-weight: bold;
+  padding: 1vh 1vw;
+  border-radius: 6px;
+  border: none;
+}
+
+.submit-section button:hover {
+  background: linear-gradient(
+    to right,
+    #bdddff,
+    #89cfff
+  ); /* Adjust gradient for hover effect */
+  color: black; /* Optional: Change text color on hover */
+}
+
+.confirmModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* backdrop-filter: blur(5px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.confirmBox {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.confirmBox p {
+  margin-bottom: 20px;
+}
+
+.custom-Modal button {
+  background-color: #1967d2;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.missedQ {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 40vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.missedQ p {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ff0000;
+  /* text-shadow: -1px -1px 0 black,  
+      1px -1px 0 black,
+      -1px  1px 0 black,
+      1px  1px 0 black; */
+}
+
+.zero-value-warning p {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: center; /* Space between left and right sections */
+  align-items: center; /* Vertically center the content */
+  background-color: #f5f5f5; /* Background color for the navbar */
+  color: white; /* Text color */
+  padding: 15px 20px; /* Add padding for spacing */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the page */
+  height: 60px; /* Fixed height for the navbar */
+  line-height: 60px;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
+}
+
+/* Navbar Left Section */
+.navbar-left {
+  display: flex;
+  flex: 1; /* Allow the left section to take up available space */
+  text-align: center; /* Center the text horizontally */
+  align-items: center; /* Vertically center the text */
+  justify-content: left;
+}
+
+.navbar-logo {
+  height: 100px; /* Adjust the height of the image */
+  width: auto; /* Maintain the aspect ratio */
+  margin-right: 30vw; /* Space between the logo and text */
+  /* margin-right: 650px; */
+}
+
+/* Navbar Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  color: #004d99;
+  margin-right: 8px;
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative; /* Position relative for dropdown menu positioning */
+  display: inline-block;
+}
+
+.dropdown label {
+  color: black;
+}
+
+.dropdown-bar {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between items */
+  padding: 0 5px;
+  background-color: rgba(
+    248,
+    248,
+    248,
+    0
+  ); /* Background color for the dropdown bar */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  width: auto; /* Set a fixed width */
+  height: auto;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropdown-bar:hover {
+  background-color: #d5d5d5; /* Highlight on hover */
+}
+
+/* Dropdown Button */
+.dropdown-button {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  color: rgb(119, 119, 119); /* Match navbar text color */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 10px; /* Add padding for clickable area */
+  outline: none; /* Remove focus outline */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Dropdown Button Hover Effect */
+.dropdown-button:hover {
+  color: #ccc; /* Optional: Change color on hover */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none; /* Initially hidden */
+  position: absolute; /* Position relative to the button */
+  top: 100%; /* Place below the button */
+  right: 0; /* Align to the right */
+  background-color: white; /* Background for the dropdown */
+  color: black; /* Text color */
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border-radius: 6px; /* Rounded corners */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Add padding inside the menu */
+  margin: 0; /* Remove margin */
+  z-index: 1000; /* Ensure it stays above other elements */
+  width: auto; /* Set a fixed width */
+  height: 5vh;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width of the dropdown */
+  height: 5vh; /* Full height of the dropdown */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  font-size: 1.6vh;
+  text-align: center;
+  width: 100%; /* Full width of the dropdown item */
+  height: 100%;
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */
+  display: flex; /* Make the link fill the menu item */
+  padding: 5px 10px;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  border-radius: 6px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1; /* Highlight on hover */
+  /* Optional shadow for hover effect */
+}
+
+/* Show Dropdown Menu */
+.dropdown-menu.show {
+  display: block; /* Show the menu when the dropdown is active */
+}
+
+/* Side Navbar */
+.side-navbar {
+  flex: 0 0 200px; /* Fixed width for the side navbar */
+  position: fixed; /* Fix the navbar to the left side of the screen */
+  top: 60px;
+  left: 0;
+  height: 100%; /* Full height of the viewport */
+  background: linear-gradient(
+    170deg,
+    #004d99,
+    #76b9fc
+  ); /* Background color for the side navbar */
+  color: white; /* Text color */
+  padding: 10px 0; /* Add padding for spacing */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
+  z-index: 999; /* Ensure it stays above other content */
+}
+
+/* Side Navbar List */
+.side-navbar ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Side Navbar List Items */
+.side-navbar li {
+  display: flex; /* Use flexbox for horizontal alignment */
+  align-items: center; /* Vertically center the icon and text */
+  margin: 10px 10px; /* Add spacing between items */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+/* Side Navbar Icons */
+.side-navbar i {
+  vertical-align: middle; /* Align the icon with the text */
+}
+
+.side-navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Link text color */
+  display: block; /* Make the links fill the width of the navbar */
+  padding: 10px 15px; /* Add padding for clickable area */
+  border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+.side-navbar li:hover {
+  background-color: #003366; /* Darker blue on hover */
+}
