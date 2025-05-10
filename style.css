@@ -37,13 +37,13 @@ input[type="number"] {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none; /* Remove spinners in WebKit browsers */
-  margin: 0; /* Remove any margin */
+  margin: 0;
 }
 
 /* Main Layout */
 .main-layout {
   display: flex;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
 }
 
@@ -57,7 +57,7 @@ input[type="number"]::-webkit-outer-spin-button {
   align-items: center;
   gap: 0.6vw;
   justify-content: center;
-  margin: 0 0 1vh 0;
+  margin: 0.5vh 0 0 0;
 }
 
 .header-container i {
@@ -65,19 +65,10 @@ input[type="number"]::-webkit-outer-spin-button {
   color: black;
 }
 
-/* .form-container h1 {
-  width: 100%;
-  text-align: left;
-  margin: 0 0 10px 0;
-  font-size: 3vh;
-  line-height: 1;
-  color: black;
-} */
-
 .header-container h1 {
   width: 100%;
   text-align: left;
-  font-size: 3vh;
+  font-size: 2rem;
   line-height: 1;
   color: black;
 }
@@ -99,7 +90,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .form-content {
-  position: absolute; /* Position relative to the parent container */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -110,65 +101,65 @@ input[type="number"]::-webkit-outer-spin-button {
     255,
     0.7
   ); /* Semi-transparent white overlay */
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack content vertically */
-  padding: 20px;
-  z-index: 2; /* Ensure it appears above the background image */
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 1.5vw;
+  z-index: 2;
+  overflow-y: auto;
 }
 
 /* Form Container */
 .form-container {
-  flex: 1; /* Take up the remaining space */
+  flex: 1;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start; /* Space between form groups */
-  align-items: stretch; /* Align items to the top */
-  padding: 40px; /* Add padding around the content */
-  margin-left: 220px;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 2rem;
+  margin-left: 14rem;
   height: auto;
-  gap: 0.5vw; /* Space between form groups */
+  gap: 0.5vw;
   margin-top: 4.5vh;
-  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  overflow-y: auto;
   /* background: linear-gradient(to bottom, #eaeaea, #ffffff); */
 }
 
 .form-groups-container {
   display: flex;
-  flex-wrap: wrap; /* Allow form groups to wrap */
-  justify-content: space-between; /* Space between form groups */
-  align-items: flex-start; /* Align items to the top */
-  gap: 1vw; /* Add spacing between form groups */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1vw;
 }
 
 /* Form Groups */
 .form-group {
-  flex: 1 1 calc(50% - 20px); /* Allow items to grow and shrink, with a base width of 33% minus the gap */
+  flex: 1 1 calc(50% - 20px);
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1vw;
-  background-color: rgba(249, 249, 249, 0.8); /* Light gray with transparency */
+  background-color: rgba(249, 249, 249, 0.8);
 
   overflow-y: auto;
 }
 
 .left-form-group {
-  flex: 1 1 30%; /* Trailer Details and Inventory span the full width */
+  flex: 1 1 30%;
   display: flex;
-  flex-direction: column; /* Stack Trailer Details and Inventory vertically */
-  gap: 1vh; /* Add spacing between the two groups */
+  flex-direction: column;
+  gap: 1vh;
 }
 
 .form-group-2,
 .form-group-3 {
-  flex: 1 1 33%; /* Supplies group spans the full width */
+  flex: 1 1 33%;
 }
 
 .form-group h2 {
   margin-top: 0;
   text-align: center;
-  font-size: clamp(16px, 2vw, 20px); /* Responsive font size */
+  font-size: clamp(16px, 2vw, 20px);
 }
 
 .form-group label {
@@ -185,55 +176,57 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .form-group-0 #storeNumber {
-  height: 4vh; /* Match the height of other inputs */
-  width: 12vw; /* Make the input span the full width of the container */
-  border: 2px solid black; /* Add a full border around the input */
-  border-radius: 10px; /* Add rounded corners to all sides */
-  outline: none; /* Remove the default outline */
-  padding: 0.5vw; /* Add padding inside the input */
+  height: 4vh;
+  width: 12vw;
+  border: 2px solid black;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.5vw;
 }
 
 /* Target inputs in form-group-0 */
 .form-group-0 input[type="text"] {
-  height: 4vh; /* Match the height of other inputs */
-  width: 100%; /* Make the input span the full width of the container */
-  border: 2px solid black; /* Add a full border around the input */
-  border-radius: 10px; /* Add rounded corners to all sides */
-  outline: none; /* Remove the default outline */
-  padding: 0.5vw; /* Add padding inside the input */
+  height: 4vh;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.5vw;
+  margin-top: 0.5vh;
 }
 
 .form-group-0 input[type="date"] {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  height: 4vh; /* Match the height of other inputs */
-  width: 100%; /* Make the input span the full width of the container */
-  border: 2px solid black; /* Add a full border around the input */
-  border-radius: 10px; /* Add rounded corners to all sides */
-  outline: none; /* Remove the default outline */
-  padding: 0.5vw; /* Add padding inside the input */
+  height: 4vh;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  outline: none;
+  padding: 0.6vw;
 }
 
 .input-group {
   display: flex;
-  align-items: stretch; /* Ensures vertical alignment */
+  align-items: stretch;
   margin-bottom: 0.6vh;
 }
 
 .input-group input,
 .input-group button {
-  font-size: 1vw; /* Ensure font size is the same */
-  line-height: 1; /* Prevent extra spacing caused by line height */
-  padding: 0; /* Adjust padding to match the height */
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0;
+  font-weight: bold;
 }
 
 .input-group input {
   height: 4vh;
   width: 7vw;
   border: 2px solid black;
-  border-right: none; /* Remove the right border to connect with the button */
-  border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+  border-right: none;
+  border-radius: 10px 0 0 10px;
   outline: none;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  transition: background-color 0.3s ease;
 }
 
 .input-group input:hover {
@@ -245,41 +238,40 @@ input[type="number"]::-webkit-outer-spin-button {
   background: linear-gradient(to right, #49a4ff, #0080ff);
   color: white;
   border: 2px solid black;
-  border-left: none; /* Remove the left border to connect with the input */
-  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+  border-left: none;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5vw; /* Adjust padding to match the height */
+  padding: 0 0.5vw;
 
-  position: relative; /* Position relative for absolute positioning of icon */
-  top: 0.5vh; /* Adjust position to align with input */
+  position: relative;
+  top: 0.5vh;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
   transition: background 0.3s ease;
 }
 
 .input-group button:hover {
-  background: linear-gradient(
-    to right,
-    #bdddff,
-    #89cfff
-  ); /* Adjust gradient for hover effect */
-  color: black; /* Optional: Change text color on hover */
+  background: linear-gradient(to right, #bdddff, #89cfff);
+  color: black;
 }
 
 .plus-button {
-  border-radius: 0 !important; /* Remove rounded corners */
-  border-left: 3px solid black !important; /* Add left border */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  border-radius: 0 !important;
+  border-left: 3px solid black !important;
+  transition: background-color 0.3s ease;
 }
 
 .submit-section {
   bottom: 1vh;
-  right: 1vw;
-  text-align: right;
+  right: 0;
+  left: 0;
+  text-align: center;
   position: absolute;
+  justify-content: center;
+  display: flex;
 }
 
 .submit-section button {
@@ -290,15 +282,12 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 1vh 1vw;
   border-radius: 6px;
   border: none;
+  cursor: pointer;
 }
 
 .submit-section button:hover {
-  background: linear-gradient(
-    to right,
-    #bdddff,
-    #89cfff
-  ); /* Adjust gradient for hover effect */
-  color: black; /* Optional: Change text color on hover */
+  background: linear-gradient(to right, #bdddff, #89cfff);
+  color: black;
 }
 
 .confirmModal {
@@ -354,10 +343,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-bottom: 20px;
   font-weight: bold;
   color: #ff0000;
-  /* text-shadow: -1px -1px 0 black,  
-      1px -1px 0 black,
-      -1px  1px 0 black,
-      1px  1px 0 black; */
 }
 
 .zero-value-warning p {
@@ -373,35 +358,34 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Navigation Bar */
 .navbar {
   display: flex;
-  justify-content: center; /* Space between left and right sections */
-  align-items: center; /* Vertically center the content */
-  background-color: #f5f5f5; /* Background color for the navbar */
-  color: white; /* Text color */
-  padding: 15px 20px; /* Add padding for spacing */
-  position: fixed; /* Fix the navbar at the top */
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  color: white;
+  padding: 1rem 1.2rem;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Full width of the page */
-  height: 60px; /* Fixed height for the navbar */
+  width: 100%;
+  height: 4rem;
   line-height: 60px;
-  z-index: 1000; /* Ensure it stays on top of other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Navbar Left Section */
 .navbar-left {
   display: flex;
-  flex: 1; /* Allow the left section to take up available space */
-  text-align: center; /* Center the text horizontally */
-  align-items: center; /* Vertically center the text */
+  flex: 1;
+  text-align: center;
+  align-items: center;
   justify-content: left;
 }
 
 .navbar-logo {
-  height: 100px; /* Adjust the height of the image */
-  width: auto; /* Maintain the aspect ratio */
-  margin-right: 30vw; /* Space between the logo and text */
-  /* margin-right: 650px; */
+  height: 7rem;
+  width: auto;
+  margin-right: 30vw;
 }
 
 /* Navbar Right Section */
@@ -413,12 +397,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .user-icon {
   color: #004d99;
-  margin-right: 8px;
+  margin-right: 0.4vw;
 }
 
 /* Dropdown Container */
 .dropdown {
-  position: relative; /* Position relative for dropdown menu positioning */
+  position: relative;
   display: inline-block;
 }
 
@@ -427,60 +411,54 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .dropdown-bar {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Space between items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 5px;
-  background-color: rgba(
-    248,
-    248,
-    248,
-    0
-  ); /* Background color for the dropdown bar */
-  border-radius: 6px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  width: auto; /* Set a fixed width */
+  background-color: rgba(248, 248, 248, 0);
+  border-radius: 6px;
+  width: auto;
   height: auto;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  transition: background-color 0.3s ease;
 }
 
-.dropdown-bar:hover {
+/* .dropdown-bar:hover {
   background-color: #d5d5d5; /* Highlight on hover */
-}
+/* } */
 
 /* Dropdown Button */
 .dropdown-button {
-  background: none; /* Remove background */
-  border: none; /* Remove border */
-  color: rgb(119, 119, 119); /* Match navbar text color */
-  font-size: 16px; /* Adjust font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  padding: 10px; /* Add padding for clickable area */
-  outline: none; /* Remove focus outline */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  background: none;
+  border: none;
+  color: rgb(119, 119, 119);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
 /* Dropdown Button Hover Effect */
 .dropdown-button:hover {
-  color: #ccc; /* Optional: Change color on hover */
+  color: #ccc;
 }
 
 /* Dropdown Menu */
 .dropdown-menu {
-  display: none; /* Initially hidden */
-  position: absolute; /* Position relative to the button */
-  top: 100%; /* Place below the button */
-  right: 0; /* Align to the right */
-  background-color: white; /* Background for the dropdown */
-  color: black; /* Text color */
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  color: black;
   font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  border-radius: 6px; /* Rounded corners */
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Add padding inside the menu */
-  margin: 0; /* Remove margin */
-  z-index: 1000; /* Ensure it stays above other elements */
-  width: auto; /* Set a fixed width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  width: auto;
   height: 5vh;
 }
 
@@ -489,8 +467,8 @@ input[type="number"]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Full width of the dropdown */
-  height: 5vh; /* Full height of the dropdown */
+  width: 100%;
+  height: 5vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 0;
 }
@@ -498,75 +476,70 @@ input[type="number"]::-webkit-outer-spin-button {
 .dropdown-menu li a {
   font-size: 1.6vh;
   text-align: center;
-  width: 100%; /* Full width of the dropdown item */
+  width: 100%;
   height: 100%;
-  text-decoration: none; /* Remove underline */
-  color: black; /* Text color */
-  display: flex; /* Make the link fill the menu item */
-  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  padding: 1vh 1vw;
   align-items: center;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  transition: background-color 0.3s ease;
   border-radius: 6px;
 }
 
 .dropdown-menu li a:hover {
-  background-color: #f1f1f1; /* Highlight on hover */
-  /* Optional shadow for hover effect */
+  background-color: #f1f1f1;
 }
 
 /* Show Dropdown Menu */
 .dropdown-menu.show {
-  display: block; /* Show the menu when the dropdown is active */
+  display: block;
 }
 
 /* Side Navbar */
 .side-navbar {
-  flex: 0 0 200px; /* Fixed width for the side navbar */
-  position: fixed; /* Fix the navbar to the left side of the screen */
-  top: 60px;
+  flex: 0 0 200px;
+  position: fixed;
+  top: 4rem;
   left: 0;
-  height: 100%; /* Full height of the viewport */
-  background: linear-gradient(
-    170deg,
-    #004d99,
-    #76b9fc
-  ); /* Background color for the side navbar */
-  color: white; /* Text color */
-  padding: 10px 0; /* Add padding for spacing */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
-  z-index: 999; /* Ensure it stays above other content */
+  height: 100%;
+  background: linear-gradient(170deg, #004d99, #76b9fc);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 /* Side Navbar List */
 .side-navbar ul {
-  list-style-type: none; /* Remove bullet points */
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
 /* Side Navbar List Items */
 .side-navbar li {
-  display: flex; /* Use flexbox for horizontal alignment */
-  align-items: center; /* Vertically center the icon and text */
-  margin: 10px 10px; /* Add spacing between items */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0.5rem;
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 0.5rem;
   border-radius: 6px;
 }
 
 /* Side Navbar Icons */
 .side-navbar i {
-  vertical-align: middle; /* Align the icon with the text */
+  vertical-align: middle;
 }
 
 .side-navbar a {
-  text-decoration: none; /* Remove underline from links */
-  color: white; /* Link text color */
-  display: block; /* Make the links fill the width of the navbar */
-  padding: 10px 15px; /* Add padding for clickable area */
-  border-radius: 4px; /* Optional: Add rounded corners */
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 4px;
 }
 
 .side-navbar li:hover {
-  background-color: #003366; /* Darker blue on hover */
+  background-color: #003366;
 }
