@@ -105,8 +105,8 @@ input[type="number"]::-webkit-outer-spin-button {
   flex-direction: column;
   padding: 2vh 1.5vw;
   z-index: 2;
-  overflow-y: auto;
-  width: auto;
+  overflow: auto;
+  /* width: auto; */
 }
 
 /* Form Container */
@@ -122,33 +122,34 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
   gap: 0.5vw;
   margin-top: 4.5vh;
-  overflow-y: auto;
-  width: 100%;
+  overflow: auto;
 
   /* background: linear-gradient(to bottom, #eaeaea, #ffffff); */
 }
 
 .form-groups-container {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: flex-start;
-  gap: 0.5vw;
+  gap: 0.1vw;
   width: 100%;
 }
 
 /* Form Groups */
 .form-group {
-  flex: 1 1 calc(50% - 20px);
+  /* flex: 0 0 calc(50% - 20px); */
+  /* flex: 0 0 100%; */
+
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1vw;
   background-color: rgba(249, 249, 249, 0.8);
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .left-form-group {
-  flex: 1 1 30%;
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
   gap: 1vh;
@@ -156,7 +157,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .form-group-2,
 .form-group-3 {
-  flex: 1 1 33%;
+  flex: 0 0 33%;
 }
 
 .form-group h2 {
@@ -278,17 +279,17 @@ input[type="number"]::-webkit-outer-spin-button {
 .submit-section button {
   background: linear-gradient(to bottom, #49a4ff, #004d99);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   padding: 1vh 1vw;
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .submit-section button:hover {
-  background: linear-gradient(to right, #bdddff, #89cfff);
-  color: black;
+  color: black; /* Change text color on hover */
 }
 
 .confirmModal {
