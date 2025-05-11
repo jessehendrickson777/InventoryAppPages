@@ -1,6 +1,7 @@
+const today = new Date().toISOString().split("T")[0];
+
 document.addEventListener("DOMContentLoaded", () => {
   const dateInputs = document.querySelectorAll("input[type='date']");
-  const today = new Date().toISOString().split("T")[0];
 
   dateInputs.forEach((dateInput) => {
     dateInput.value = today;
@@ -99,16 +100,57 @@ document.addEventListener("click", (e) => {
   }
 });
 
-document.getElementById("confirmYes2").addEventListener("click", () => {
-  const form = document.querySelector("form");
-  document.getElementById("customConfirm2").style.display = "none";
-  // Log form data to the console
-  const formData = new FormData(form);
-  formData.forEach((value, key) => {
-    console.log(`${key}: ${value}`);
+const formResults = document
+  .getElementById("confirmYes2")
+  .addEventListener("click", () => {
+    const activeTab = document.querySelector(".form-container:not(.hidden)");
+    const form = activeTab.querySelector("form");
+    document.getElementById("customConfirm2").style.display = "none";
+
+    localStorage.setItem("activeTab", activeTab.id); // Save it to local storage
+
+    const formData = new FormData(form);
+
+    const results = {};
+    for (const [key, value] of formData.entries()) {
+      results[key] = value;
+    }
+    console.log(results); // Log the results object
+
+    const inputs = form.querySelectorAll("input");
+
+    inputs.forEach((input) => {
+      if (input.type === "number" && input.name !== "storeNumber") {
+        input.value = 0;
+      } else if (
+        input.name === "storeNumber" ||
+        input.name === "trailerNumber"
+      ) {
+        input.value = "";
+      } else if (input.type === "text") {
+        input.value = input.placeholder;
+      } else if (input.type === "date") {
+        input.value = today;
+      }
+    });
+
+    return results;
+    // formData.forEach((value, key) => {
+    //   console.log(`${key}: ${value}`);
+    // });
+
+    // form.submit();
   });
 
-  form.submit();
+// On page load, check local storage and display the correct tab
+window.addEventListener("load", () => {
+  const activeTab = localStorage.getItem("activeTab");
+  if (activeTab) {
+    document.querySelectorAll(".form-container").forEach((tab) => {
+      tab.classList.add("hidden"); // Hide all tabs
+    });
+    document.getElementById(activeTab).classList.remove("hidden"); // Show the active tab
+  }
 });
 
 document.getElementById("confirmNo2").addEventListener("click", () => {
